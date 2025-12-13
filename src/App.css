@@ -1,38 +1,72 @@
-.App {
-  text-align: center;
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
+/* Header Css */
+.header {
   background-color: #282c34;
-  min-height: 100vh;
+  height: 10vh;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  justify-content: space-between;
+  font-size: 1rem;
   color: white;
+  padding: 1rem;
 }
-
-.App-link {
-  color: #61dafb;
+.search_element {
+  padding: 0.5rem;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Menu Category Css */
+.menu_categories {
+  display: flex;
+  gap: 1.5rem;
+  background-color: aliceblue;
+  padding: 1rem;
+}
+.category_tab {
+  font-size: 1.5rem;
+  color: black;
+  cursor: pointer;
+}
+.active_category {
+  border-bottom: 4px solid rgb(152, 245, 13);
+}
+.active_category_heading {
+  color: darkblue;
+  font-size: 1.5rem;
+}
+/* DishList and DishCard Css */
+.dish_list-container {
+  padding: 0.5rem;
+}
+.dish_list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 0.5rem;
+}
+.dish_card {
+  background-color: burlywood;
+  border-radius: 1rem;
+  display: flex;
+  min-width: 200px;
+  height: 150px;
+  margin: 0.5rem;
+  padding: 10px;
+}
+.dish_name {
+  color: blue;
+  font-size: 1.5rem;
+}
+.button {
+  border-radius: 5px;
+  background-color: green;
+  font-size: 1rem;
+  border: none;
+  padding: 10px;
+  margin-top: 20px;
+  color: white;
 }
