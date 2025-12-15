@@ -1,31 +1,37 @@
 import React, { useState } from "react";
 import DishList from "./DishList";
-import dummyData from "../assets/dummy_data";
+import { useSelector } from "react-redux";
 
-const categories = ["Starter", "Main Course", "Dessert", "Classic"];
 const MenuCategories = () => {
-  const [activeTab, setActiveTab] = useState(categories[0]);
+  const categories = useSelector((state) => state.category);
+  const categoryKeys = Object.keys(categories || {});
+  const [activeTab, setActiveTab] = useState(categoryKeys[0] || "");
+  const activeCategoryData = categories[activeTab].data;
+
   function onChangeCategory(categoryName) {
-    const tab = categories.find((category) => category === categoryName);
-    setActiveTab(tab);
+    setActiveTab(categoryName);
   }
   return (
     <div>
       <div className="menu_categories">
-        {categories.map((categoryName, index) => (
+        {Object.entries(categories).map(([categoryName, dataObj], index) => (
           <h4
             className={`category_tab ${
               categoryName === activeTab ? "active_category" : ""
             }`}
             onClick={() => onChangeCategory(categoryName)}
-            key={index}
+            key={categoryName}
           >
             {categoryName}
+            <span className="dish_count">({dataObj.count})</span>
           </h4>
         ))}
       </div>
       <div>
-        <DishList activeTab={activeTab} />
+        <DishList
+          activeTab={activeTab}
+          activeCategoryData={activeCategoryData}
+        />
       </div>
     </div>
   );

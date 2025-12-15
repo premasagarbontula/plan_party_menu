@@ -1,10 +1,20 @@
-import React from "react";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  categoryCountIncrement,
+  categoryCountDecrement,
+} from "../redux/categorySlice";
+import { useMemo } from "react";
 
-const DishCard = ({ dishDetails }) => {
+const DishCard = ({ dishDetails, activeTab }) => {
   const { id, name, description, category } = dishDetails;
   const image = category.image;
-  const price = Math.floor(Math.random() * 1000);
+  const price = useMemo(() => Math.floor(Math.random() * 1000), []);
+  const addedDishIds = useSelector(
+    (state) => state.category[activeTab].addedDishIds
+  );
+  const isAdded = addedDishIds.includes(dishDetails.id);
 
+  const dispatch = useDispatch();
   return (
     <div className="dish_card">
       <img src={image} alt={name} className="dish_image" />
@@ -12,7 +22,29 @@ const DishCard = ({ dishDetails }) => {
         <h3 className="dish_name">{name}</h3>
         <h4 className="dish_price">Rs {price}</h4>
         <p className="dish_desc">{description}</p>
-        <button className="button">Add to menu</button>
+        {!isAdded ? (
+          <button
+            className="add-button"
+            onClick={() =>
+              dispatch(
+                categoryCountIncrement({ categoryName: activeTab, dishId: id })
+              )
+            }
+          >
+            Add+
+          </button>
+        ) : (
+          <button
+            className="remove-button"
+            onClick={() =>
+              dispatch(
+                categoryCountDecrement({ categoryName: activeTab, dishId: id })
+              )
+            }
+          >
+            Remove-
+          </button>
+        )}
       </div>
     </div>
   );

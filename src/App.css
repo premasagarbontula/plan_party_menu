@@ -2,6 +2,7 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  font-family: serif;
 }
 
 /* Header Css */
@@ -38,6 +39,12 @@
   color: darkblue;
   font-size: 1.5rem;
 }
+.dish_count {
+  color: black;
+  background-color: yellow;
+  font-family: "roboto";
+  border-radius: 50%;
+}
 /* DishList and DishCard Css */
 .dish_list-container {
   padding: 0.5rem;
@@ -61,9 +68,18 @@
   color: blue;
   font-size: 1.5rem;
 }
-.button {
+.add-button {
   border-radius: 5px;
   background-color: green;
+  font-size: 1rem;
+  border: none;
+  padding: 10px;
+  margin-top: 20px;
+  color: white;
+}
+.remove-button {
+  border-radius: 5px;
+  background-color: rgb(135, 4, 4);
   font-size: 1rem;
   border: none;
   padding: 10px;
