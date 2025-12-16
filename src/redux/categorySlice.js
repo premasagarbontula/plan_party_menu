@@ -26,9 +26,15 @@ const categorySlice = createSlice({
         categoryName
       ].addedDishIds.filter((id) => id !== dishId);
     },
+    clearCart: (state, action) => {
+      Object.values(state).forEach((category) => {
+        category.count = 0;
+        category.addedDishIds = [];
+      });
+    },
   },
 });
 
-export const { categoryCountIncrement, categoryCountDecrement } =
+export const { categoryCountIncrement, categoryCountDecrement, clearCart } =
   categorySlice.actions;
 export default categorySlice.reducer;

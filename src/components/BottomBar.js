@@ -1,9 +1,11 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { clearCart } from "../redux/categorySlice";
 
 const BottomBar = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const categories = useSelector((state) => state.category);
   const totalDishCount = Object.values(categories).reduce((acc, curr) => {
     return acc + curr.count;
@@ -33,7 +35,9 @@ const BottomBar = () => {
             <p className="bottom-span">${totalValue}</p>
           </div>
         </div>
-
+        <button className="clear-cart-btn" onClick={() => dispatch(clearCart())}>
+          Clear cart
+        </button>
         <button className="continue-btn" onClick={() => navigate("/cart")}>
           Continue
         </button>
