@@ -47,26 +47,57 @@
 }
 /* DishList and DishCard Css */
 .dish_list-container {
-  padding: 0.5rem;
+  width: 90vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.dish_list_heading_container {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+  margin-top: 20px;
 }
 .dish_list {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  padding: 0.5rem;
+  width: 100%;
+  max-width: 1200px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
 }
+
+.dish_length {
+  font-size: 1rem;
+  color: #e53935;
+  font-weight: 600;
+}
+
 .dish_card {
-  background-color: burlywood;
-  border-radius: 1rem;
+  background-color: #fffaf3;
+  border-radius: 16px;
   display: flex;
-  min-width: 200px;
-  height: 150px;
-  margin: 0.5rem;
-  padding: 10px;
+  gap: 1rem;
+  padding: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
+
+.dish_card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
 .dish_name {
   color: blue;
   font-size: 1.5rem;
+}
+.dish_image {
+  width: 45%;
 }
 .add-button {
   border-radius: 5px;
@@ -85,4 +116,39 @@
   padding: 10px;
   margin-top: 20px;
   color: white;
+}
+
+/*Cart Css*/
+
+.cart-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.2rem;
+  background-color: black;
+  color: aliceblue;
+}
+.cart-sub-container {
+  display: flex;
+  gap: 2rem;
+}
+.separator {
+  width: 3px;
+  background-color: #e53935;
+  border: none;
+}
+.cart-heading {
+  font-size: 1rem;
+}
+.cart-span {
+  font-size: 2rem;
+  color: rgb(255, 166, 1);
+}
+.continue-btn {
+  border-radius: 100px;
+  background-color: aliceblue;
+  font-size: 1rem;
+  border: none;
+  padding: 10px 15px 10px 15px;
+  font-weight: 600;
 }

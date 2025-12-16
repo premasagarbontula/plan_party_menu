@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import DishList from "./DishList";
 import { useSelector } from "react-redux";
 
@@ -6,7 +6,13 @@ const MenuCategories = () => {
   const categories = useSelector((state) => state.category);
   const categoryKeys = Object.keys(categories || {});
   const [activeTab, setActiveTab] = useState(categoryKeys[0] || "");
-  const activeCategoryData = categories[activeTab].data;
+  const activeCategoryData = categories?.[activeTab]?.data || [];
+  
+  useEffect(() => {
+    if (categoryKeys.length && !activeTab) {
+      setActiveTab(categoryKeys[0]);
+    }
+  }, [categoryKeys, activeTab]);
 
   function onChangeCategory(categoryName) {
     setActiveTab(categoryName);

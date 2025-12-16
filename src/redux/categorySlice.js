@@ -2,9 +2,10 @@ import { createSlice } from "@reduxjs/toolkit";
 import dummyData from "../assets/dummy_data";
 const categories = {
   Starter: { count: 0, data: dummyData.slice(0, 5), addedDishIds: [] },
-  "Main Course": { count: 0, data: dummyData.slice(5, 10), addedDishIds: [] },
-  Dessert: { count: 0, data: dummyData.slice(10, 15), addedDishIds: [] },
-  Classic: { count: 0, data: dummyData.slice(15, 20), addedDishIds: [] },
+  "Main Course": { count: 0, data: dummyData.slice(5, 9), addedDishIds: [] },
+  Dessert: { count: 0, data: dummyData.slice(9, 15), addedDishIds: [] },
+  Classic: { count: 0, data: dummyData.slice(15, 18), addedDishIds: [] },
+  Drinks: { count: 0, data: [], addedDishIds: [] },
 };
 
 const categorySlice = createSlice({

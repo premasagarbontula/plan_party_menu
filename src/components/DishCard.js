@@ -8,7 +8,7 @@ import { useMemo } from "react";
 const DishCard = ({ dishDetails, activeTab }) => {
   const { id, name, description, category } = dishDetails;
   const image = category.image;
-  const price = useMemo(() => Math.floor(Math.random() * 1000), []);
+  const price = id * 10;
   const addedDishIds = useSelector(
     (state) => state.category[activeTab].addedDishIds
   );
@@ -20,7 +20,7 @@ const DishCard = ({ dishDetails, activeTab }) => {
       <img src={image} alt={name} className="dish_image" />
       <div>
         <h3 className="dish_name">{name}</h3>
-        <h4 className="dish_price">Rs {price}</h4>
+        <h4 className="dish_price">$ {price}</h4>
         <p className="dish_desc">{description}</p>
         {!isAdded ? (
           <button
