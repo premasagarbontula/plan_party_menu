@@ -121,21 +121,32 @@
 /*Cart Css*/
 
 .cart-container {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 1.2rem;
   background-color: black;
   color: aliceblue;
+  padding: 1rem;
 }
+
 .cart-sub-container {
   display: flex;
-  gap: 2rem;
+  justify-content: left;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
 }
+
 .separator {
   width: 3px;
+  height: 50px;
   background-color: #e53935;
   border: none;
+  margin: 10px;
 }
 .cart-heading {
   font-size: 1rem;
@@ -145,10 +156,10 @@
   color: rgb(255, 166, 1);
 }
 .continue-btn {
-  border-radius: 100px;
   background-color: aliceblue;
   font-size: 1rem;
   border: none;
-  padding: 10px 15px 10px 15px;
-  font-weight: 600;
+  height: 40px;
+  padding: 10px 16px;
+  border-radius: 9999px;
 }
