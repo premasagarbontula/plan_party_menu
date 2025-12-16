@@ -16,37 +16,39 @@
   font-size: 1rem;
   color: white;
   padding: 1rem;
+  cursor: pointer;
 }
-.search_element {
+.search-element {
   padding: 0.5rem;
+  font-size: 1rem;
 }
 /* Menu Category Css */
-.menu_categories {
+.menu-categories {
   display: flex;
   gap: 1.5rem;
   background-color: aliceblue;
   padding: 1rem;
 }
-.category_tab {
+.category-tab {
   font-size: 1.5rem;
   color: black;
   cursor: pointer;
 }
-.active_category {
+.active-category {
   border-bottom: 4px solid rgb(152, 245, 13);
 }
-.active_category_heading {
+.active-category-heading {
   color: darkblue;
   font-size: 1.5rem;
 }
-.dish_count {
+.dish-count {
   color: black;
   background-color: yellow;
   font-family: "roboto";
   border-radius: 50%;
 }
 /* DishList and DishCard Css */
-.dish_list-container {
+.dish-list-container {
   width: 90vw;
   display: flex;
   flex-direction: column;
@@ -54,7 +56,7 @@
   justify-content: center;
 }
 
-.dish_list_heading_container {
+.dish-list-heading-container {
   width: 100%;
   max-width: 1200px;
   display: flex;
@@ -63,7 +65,7 @@
   padding: 0 1rem;
   margin-top: 20px;
 }
-.dish_list {
+.dish-list {
   width: 100%;
   max-width: 1200px;
   display: grid;
@@ -72,13 +74,13 @@
   padding: 1rem;
 }
 
-.dish_length {
+.dish-length {
   font-size: 1rem;
   color: #e53935;
   font-weight: 600;
 }
 
-.dish_card {
+.dish-card {
   background-color: #fffaf3;
   border-radius: 16px;
   display: flex;
@@ -87,16 +89,16 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
-.dish_card:hover {
+.dish-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
 }
 
-.dish_name {
+.dish-name {
   color: blue;
   font-size: 1.5rem;
 }
-.dish_image {
+.dish-image {
   width: 45%;
 }
 .add-button {
@@ -118,9 +120,9 @@
   color: white;
 }
 
-/*Cart Css*/
+/*BottomBar Css*/
 
-.cart-container {
+.bottom-container {
   position: fixed;
   left: 0;
   bottom: 0;
@@ -129,10 +131,10 @@
   align-items: center;
   background-color: black;
   color: aliceblue;
-  padding: 1rem;
+  padding: 0.75rem;
 }
 
-.cart-sub-container {
+.bottom-sub-container {
   display: flex;
   justify-content: left;
   align-items: center;
@@ -148,10 +150,10 @@
   border: none;
   margin: 10px;
 }
-.cart-heading {
+.bottom-heading {
   font-size: 1rem;
 }
-.cart-span {
+.bottom-span {
   font-size: 2rem;
   color: rgb(255, 166, 1);
 }
@@ -162,4 +164,5 @@
   height: 40px;
   padding: 10px 16px;
   border-radius: 9999px;
+  cursor: pointer;
 }

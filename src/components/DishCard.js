@@ -3,7 +3,6 @@ import {
   categoryCountIncrement,
   categoryCountDecrement,
 } from "../redux/categorySlice";
-import { useMemo } from "react";
 
 const DishCard = ({ dishDetails, activeTab }) => {
   const { id, name, description, category } = dishDetails;
@@ -16,12 +15,12 @@ const DishCard = ({ dishDetails, activeTab }) => {
 
   const dispatch = useDispatch();
   return (
-    <div className="dish_card">
-      <img src={image} alt={name} className="dish_image" />
+    <div className="dish-card">
+      <img src={image} alt={name} className="dish-image" />
       <div>
-        <h3 className="dish_name">{name}</h3>
-        <h4 className="dish_price">$ {price}</h4>
-        <p className="dish_desc">{description}</p>
+        <h3 className="dish-name">{name}</h3>
+        <h4 className="dish-price">$ {price}</h4>
+        <p className="dish-desc">{description}</p>
         {!isAdded ? (
           <button
             className="add-button"

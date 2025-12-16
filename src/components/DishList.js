@@ -3,13 +3,13 @@ import DishCard from "./DishCard";
 
 const DishList = ({ activeTab, activeCategoryData }) => {
   return (
-    <div className="dish_list-container">
-      <div className="dish_list_heading_container">
-        <h3 className="active_category_heading">{activeTab} Selection</h3>
-        <p className="dish_length">Showing {activeCategoryData.length} dishes</p>
+    <div className="dish-list-container">
+      <div className="dish-list-heading-container">
+        <h3 className="active-category-heading">{activeTab} Selection</h3>
+        <p className="dish-length">Showing {activeCategoryData.length} dishes</p>
       </div>
 
-      <div className="dish_list">
+      <div className="dish-list">
         {activeCategoryData.length === 0 ? (
           <p>No dishes available</p>
         ) : (

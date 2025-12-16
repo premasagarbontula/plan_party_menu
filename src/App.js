@@ -1,15 +1,20 @@
 import "./App.css";
+import BottomBar from "./components/BottomBar";
 import Cart from "./components/Cart";
 import Header from "./components/Header";
 import MenuCategories from "./components/MenuCategories";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
+    <BrowserRouter>
       <Header />
-      <MenuCategories />
-      <Cart />
-    </div>
+      <Routes>
+        <Route path="/" element={<MenuCategories />} />
+        <Route path="/cart" element={<Cart />} />
+      </Routes>
+      <BottomBar />
+    </BrowserRouter>
   );
 }
 

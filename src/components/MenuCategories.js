@@ -28,17 +28,17 @@ const MenuCategories = () => {
   }
   return (
     <div>
-      <div className="menu_categories">
+      <div className="menu-categories">
         {Object.entries(categories).map(([categoryName, dataObj], index) => (
           <h4
-            className={`category_tab ${
-              categoryName === activeTab ? "active_category" : ""
+            className={`category-tab ${
+              categoryName === activeTab ? "active-category" : ""
             }`}
             onClick={() => onChangeCategory(categoryName)}
             key={categoryName}
           >
             {categoryName}
-            <span className="dish_count">({dataObj.count})</span>
+            <span className="dish-count">({dataObj.count})</span>
           </h4>
         ))}
       </div>
